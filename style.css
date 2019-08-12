@@ -10,11 +10,13 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 html {
 	font-size: 125%;
-	color: white;
-	font-family: 'Open Sans', sans-serif;
 }
 
 body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	background: linear-gradient(to bottom, rgba(245, 246, 252, 0.20), rgba(255, 255, 255, 0.35)), url(./assets/dane-deaner-XAqTc-LLm6A-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -29,26 +31,46 @@ body {
 	text-align: center;
 }
 
+html,
+.submit,
+.year,
+.category,
+.search-results {
+	font-family: 'Oswald', cursive;
+}
+
 h1,
 h2,
+h3,
 footer {
 	font-family: 'Great Vibes', cursive;
 }
 
+html,
+h3,
+.search-results {
+	color: white;
+}
+
 h1,
-h2{
+h2,
+h3,
+li {
 	text-shadow: 2px 2px #113;
 }
 
 h1 {
-	width: 900px;
 	margin: 10% auto 0;
-	font-size: 6.5rem;
+	font-size: calc(6rem + 1vw);
 }
 
 h2 {	
 	margin: 10px 0 50px;
 	font-size: 2.5rem;
+}
+
+h3 {
+	font-size: calc(2.3rem + 1vw);
 }
 
 h2,
@@ -58,13 +80,23 @@ footer {
 }
 
 form  {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 	width: 50%;
 	margin: 0 auto;
 }
 
+ul {
+	padding: 0;
+}
+
+footer,
+.main-content {
+	margin-top: 50px;
+}
+
 footer {
-	position: fixed;
-	bottom: 0;
 	width: 100%;
 }
 
@@ -79,7 +111,6 @@ footer,
 }
 
 .main-content {
-	margin-top: 50px;
 	text-align: center;
 	font-weight: 500;
 }
@@ -111,7 +142,6 @@ footer,
 .year,
 .category {
 	font-size: 20px;
-	font-family: 'Open Sans', sans-serif;
 	margin: 20px;
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -126,4 +156,41 @@ footer,
 .year:hover,
 .category:hover {
 	border-color: #777;
+}
+
+.search-results {
+	margin: 30px;
+	font-size: calc(2rem + 1vw);
+	font-weight: 600;
+	list-style: none;
+}
+
+@media (max-width: 1150px) {
+	h1 {
+		font-size: calc(5.5rem + 1vw);
+	}
+
+	h3 {
+		font-size: calc(1.6rem + 1vw);
+	}
+}
+
+@media (max-width: 820px) {
+	.wrapper {
+		width: 90%;
+	}
+	
+	h1 {
+		margin-top: 20%;
+		font-size: calc(3rem + 1vw);
+	}
+
+	h2 {	
+		font-size: 2rem;
+	}
+
+	.year,
+	.category {
+		width: 100px;
+	}
 }
